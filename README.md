@@ -1,5 +1,5 @@
-# arithmesheets
-A simple arithmetic problem generator for practice and drills.
+# ArithmeSheets
+A simple arithmetic problem generator to print problems for practice and drills.
 
 ## Commands
 Command                | Description                                      |
