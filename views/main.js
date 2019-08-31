@@ -8,11 +8,16 @@ function view (state, emit) {
   if (state.title !== TITLE) emit(state.events.DOMTITLECHANGE, TITLE)
 
   return html`
-    <body class="code lh-copy tc ph2-ns">
+    <body class="code lh-copy">
       <main>
+        <header class="cf">
+          <h1 class="fr bg-black-80 white mv3 pl2 pr4">ArithmeSheets</h1>
+          <div class="lh-solid dib mv3 f1 pl4 pr2 bg-red">
+            <span>↯</span>
+            <span>✍</span>
+        </header>
         <section>
-        <h1 class="tr">ArithmeSheets</h1>
-        <div class="mw9 center">
+        <div class="mw9 center ph2-ns">
           <div class="cf ph1-ns f3-ns b-l">
             <div class="fl w-10 pa2">
               <div class="bg-white pv1">
@@ -46,7 +51,7 @@ function view (state, emit) {
         </div>
         </section>
       </main>
-      <footer>
+      <footer class="tc">
         <a class="link" href="https://electro.pizza">
           <img class="mw2" src="../assets/ep-logo-sharp.svg" />
         </a>
