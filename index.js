@@ -1,6 +1,10 @@
 var css = require('sheetify')
 var choo = require('choo')
 
+css`
+html { height: 100% };
+`
+
 css('tachyons')
 
 var app = choo()
