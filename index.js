@@ -2,9 +2,9 @@ var css = require('sheetify')
 var choo = require('choo')
 
 css`
-html { height: 100% };
+html { height: 100%; }
+#worksheet { max-width: 935px; }
 `
-
 css('tachyons')
 
 var app = choo()
