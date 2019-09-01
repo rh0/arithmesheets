@@ -4,7 +4,7 @@ var TITLE = 'ArithmeSheets'
 
 var Problem = require('../components/problem.js')
 var problems = new Array()
-for(var p=0; p<100; p++) {
+for(var p=0; p<150; p++) {
   problems.push(new Problem)
 }
 
