@@ -38,8 +38,8 @@ class Problem extends Nanocomponent {
     return html`
       <div class="fl w-10 pa2">
         <div class="bg-white pv1">
-          <pre class="ma0 dib">${this.upper}</pre>
-          <pre class="ma0 dib bb">${this.operator}${this.lower}</pre>
+          <pre class="ma0 ">${this.upper}</pre>
+          <pre class="ma0 bb">${this.operator}${this.lower}</pre>
           <br><br>
         </div>
       </div>
