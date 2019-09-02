@@ -63,7 +63,12 @@ class Problem extends Nanocomponent {
   }
 
   maxLenNumStrGen (length) {
-    return Math.trunc(Math.random()*Math.pow(10, length)).toString()
+    while(true) {
+    let upper = Math.trunc(Math.random()*Math.pow(10, length)).toString()
+      if(parseInt(upper) > 1) {
+        return upper
+      }
+    }
   }
 
   genUpper (op) {
