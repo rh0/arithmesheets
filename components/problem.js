@@ -17,7 +17,7 @@ class Problem extends Nanocomponent {
         <div class="bg-white pv1">
           <pre class="ma0 dib">${this.upper}</pre>
           <pre class="ma0 dib bb">${this.operator}${this.lower}</pre>
-          <br>
+          <br><br>
         </div>
       </div>
     `

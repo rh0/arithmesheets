@@ -4,6 +4,10 @@ var choo = require('choo')
 css`
 html { height: 100%; }
 #worksheet { max-width: 935px; }
+@media print {
+  header { display: none; }
+  footer { display: none; }
+}
 `
 css('tachyons')
 
