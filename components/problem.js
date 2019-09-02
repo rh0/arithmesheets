@@ -19,12 +19,17 @@ const primes = [2,3,5,7,11,13,17,19,23,
 863,877,881,883,887,907,911,919,929,937,
 941,947,953,967,971,977,983,991,997]
 
+const factor = number => Array
+  .from(Array(11), (_, i) => i)
+  .filter(i => number % i === 0)
+
 class Problem extends Nanocomponent {
   constructor () {
     super()
     this.upper = '    '
     this.lower = '    '
     this.operator = ' '
+    this.factors = Array()
   }
 
   createElement () {
@@ -39,6 +44,10 @@ class Problem extends Nanocomponent {
         </div>
       </div>
     `
+  }
+
+  update () {
+    return true
   }
 
   randomProblem () {
@@ -59,48 +68,48 @@ class Problem extends Nanocomponent {
 
   genUpper (op) {
     var upper = this.maxLenNumStrGen(3)
-    /*if(op === '÷') {
+    if(op === '÷') {
       while(true) {
-        if(primes.indexOf(upper) === -1) {
-          return upper
+        if(primes.indexOf(parseInt(upper)) === -1) {
+          this.factors = factor(upper)
+          if(this.factors.length > 1) {
+            this.factors.shift()
+            return upper
+          }
         }
         upper = this.maxLenNumStrGen(3)
       }
-    }*/
+    }
     return upper
   }
 
   genLower (op, upper) {
-    var digits = upper.length
-    var lower = this.maxLenNumStrGen(digits)
+    var lower
 
     while(true) {
       switch(op) {
         case '×':
-          if(upper >= lower && lower.length < 3) {
+          lower = this.maxLenNumStrGen(2)
+          if(upper >= lower &&  parseInt(lower) > 1) {
             return lower
           }
-          break;
+          break
         case '÷':
-          digits = 1;
-          if(upper >= lower && lower.length < 2 && lower !== '0') {
-            return lower
-          }
-          break;
+          return this.factors[Math.trunc(Math.random() * 10000) % this.factors.length].toString()
+          break
         default:
+          lower = this.maxLenNumStrGen(upper.length)
           if(upper >= lower) {
             return lower
           }
-          break;
+          break
       }
-
-      lower = this.maxLenNumStrGen(upper.length)
     }
   }
 
   randomOperator () {
     var operators = ['+', '−', '×', '÷']
-    return operators[Math.trunc(Math.random() * 10000)%4]
+    return operators[Math.trunc(Math.random() * 10000) % 4]
   }
 
   padString (str) {

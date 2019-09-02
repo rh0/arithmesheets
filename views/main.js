@@ -18,8 +18,8 @@ function view (state, emit) {
       <header class="cf">
         <h1 class="fr bg-black-80 white mv3 pl2 pr4">ArithmeSheets</h1>
         <div class="fixed lh-solid dib mv3 f1 pl4 pr2 bg-red black-80">
-          <span>↯</span>
-          <span>✍</span>
+          <span><a class="black-80 no-underline" href="javascript:return false" onclick=${shuffle}>↯</a></span>
+          <span><a class="black-80 no-underline" href="javascript:window.print()">✍</a></span>
         </div>
       </header>
 
@@ -42,7 +42,8 @@ function view (state, emit) {
     </body>
   `
 
-  function handleClick () {
-    emit('clicks:add', 1)
+  function shuffle () {
+    emit('render', 1)
+    return false
   }
 }
