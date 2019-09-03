@@ -16,17 +16,17 @@ function view (state, emit) {
   return html`
     <body class="code lh-copy">
       <header class="cf">
-        <h1 class="fr bg-black-80 white mv3 pl2 pr4">ArithmeSheets</h1>
-        <div class="fixed lh-solid dib mv3 f1 pl4 pr2 bg-red black-80">
-          <span><a class="black-80 no-underline" href="javascript:return false" onclick=${shuffle}>↯</a></span>
-          <span><a class="black-80 no-underline" href="javascript:window.print()">✍</a></span>
+        <h1 class="fr bg-black-80 white mt0 mv3-l pl3 pr4 pv3">ArithmeSheets</h1>
+        <div class="fixed bg-white dib mv0 f1 ph2 pv3">
+          <span><a title="regenerate" class="light-red no-underline" href="javascript:return false" onclick=${shuffle}>💥</a></span><br>
+          <span><a title="print" class="light-blue no-underline" href="javascript:window.print()">🖨</a></span>
         </div>
       </header>
 
       <main>
         <section>
-        <div id="worksheet" class="center ph4-ns tr">
-          <div class="cf ph1-ns f3-ns b-l">
+        <div id="worksheet" class="center ph4">
+          <div class="center tr cf ph1 f3">
             ${problems.map(function (problem) { return problem.render() })}
           </div>
         </div>
